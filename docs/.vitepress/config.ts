@@ -135,7 +135,10 @@ export default withMermaid(defineConfig({
   },
 
   themeConfig: {
-    logo: "/cgc-logo-blue.png",
+    // Blue artwork reads on the light theme; the white variant is for the dark
+    // theme (the blue logo is near-invisible on the dark nav bar). VitePress's
+    // VPImage swaps these by theme automatically for the { light, dark } form.
+    logo: { light: "/cgc-logo-blue.png", dark: "/cgc-logo-white.png" },
     siteTitle: "CGC Help Center",
 
     nav: [
@@ -249,8 +252,6 @@ export default withMermaid(defineConfig({
         },
       ],
     },
-
-    socialLinks: [{ icon: "github", link: "https://github.com/cgc-church" }],
 
     footer: {
       message: "Christ Gospel Church",
